@@ -1962,7 +1962,7 @@ class DeepTCR_U(DeepTCR_base,feature_analytics_class,vis_class):
         ---------------------------------------
 
         """
-
+        self.z_latent = None
         if Load_Prev_Data is False:
             GO = graph_object()
             GO.size_of_net = size_of_net
@@ -1991,7 +1991,7 @@ class DeepTCR_U(DeepTCR_base,feature_analytics_class,vis_class):
 
                     z = z_mean + tf.exp(z_log_var / 2) * tf.random.normal(tf.shape(input=z_mean), 0.0, 1.0, dtype=tf.float32)
                     z = tf.identity(z, name='z')
-                    self._z = tf.identity(z, name='z')
+                    self.z_latent = tf.identity(z, name='z')
 
                     fc_up = tf.compat.v1.layers.dense(z, 128)
                     fc_up = tf.compat.v1.layers.dense(fc_up, 256)
