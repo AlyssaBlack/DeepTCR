@@ -13,7 +13,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder,StandardScaler, MinMaxScaler
 import tensorflow as tf
 from multiprocessing import Pool
-from DeepTCR.functions.data_processing import *
+from DeepTCR.DeepTCR.functions.data_processing import *
 from sklearn.model_selection import train_test_split
 import logomaker
 import shutil
